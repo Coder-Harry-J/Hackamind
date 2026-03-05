@@ -12,8 +12,8 @@ export default function App() {
         setError(null);
         setStatus(null);
         try {
-            // Use Vite proxy to avoid browser CORS/network edge cases in dev.
-            const res = await axios.get('http://localhost:5000/api/health');
+            // Use Vite proxy: /api/* → localhost:5000/* (strips /api prefix)
+            const res = await axios.get('/api/health');
             setStatus(res.data);
         } catch (err) {
             const backendMessage = err?.response?.data?.error || err?.response?.data?.message;

@@ -1,0 +1,12 @@
+import { Request, Response } from "express";
+import { AuthRequest } from "../middleware/requireAuth";
+export declare const registerValidation: import("express-validator").ValidationChain[];
+export declare const loginValidation: import("express-validator").ValidationChain[];
+export declare function register(req: Request, res: Response): Promise<void>;
+export declare function login(req: Request, res: Response): Promise<void>;
+export declare function refreshToken(req: Request, res: Response): Promise<void>;
+export declare function logout(req: Request, res: Response): Promise<void>;
+export declare function googleCallback(req: Request, res: Response): Promise<void>;
+export declare function me(req: AuthRequest, res: Response): Promise<void>;
+export declare function updateProfile(req: AuthRequest, res: Response): Promise<void>;
+export declare function changePassword(req: AuthRequest, res: Response): Promise<void>;
